@@ -1,0 +1,48 @@
+<% title "Task" %>
+
+<p>
+  <strong>Parent:</strong>
+  <%=h @task.parent_id %>
+</p>
+<p>
+  <strong>Title:</strong>
+  <%=h @task.title %>
+</p>
+<p>
+  <strong>Description:</strong>
+  <%=h @task.description %>
+</p>
+<p>
+  <strong>Start Date:</strong>
+  <%=h @task.start_date %>
+</p>
+<p>
+  <strong>Due Date:</strong>
+  <%=h @task.due_date %>
+</p>
+<p>
+  <strong>Immediate:</strong>
+  <%=h @task.immediate %>
+</p>
+<p>
+  <strong>Urgent:</strong>
+  <%=h @task.urgent %>
+</p>
+<p>
+  <strong>Priority:</strong>
+  <%=h @task.priority %>
+</p>
+<p>
+  <strong>Done:</strong>
+  <%=h @task.done %>
+</p>
+<p>
+  <strong>Tag:</strong>
+  <%=h @task.tag %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_task_path(@task) %> |
+  <%= link_to "Destroy", @task, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", tasks_path %>
+</p>

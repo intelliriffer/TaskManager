@@ -1,0 +1,34 @@
+<% title "Tasks" %>
+
+<table id="tasks" cellspacing="0" cellpadding="2" border="0" width="100%">
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Start Date</th>
+    <th>Due Date</th>
+    <th>Immediate</th>
+    <th>Urgent</th>
+    <th>Priority</th>
+    <th>Done</th>
+    <th>Tag</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  <% show_tree(@tasks) do |item| %>
+    <td style="padding-left: 20px;"><%=h item.title %></td>
+    <td><%=h item.description %></td>
+    <td><%=h item.start_date %> </td>
+    <td><%=h item.due_date %></td>
+    <td><%=h item.immediate %></td>
+    <td><%=h item.urgent %></td>
+    <td><%=h item.priority %></td>
+    <td><%=h item.done %></td>
+    <td><%=h item.tag %></td>
+    <td><%= link_to "Show", item %></td>
+    <td><%= link_to "Edit", edit_task_path(item) %></td>
+    <td><%= link_to "Destroy", item, :confirm => 'Are you sure?', :method => :delete %></td>
+  <% end %>
+</table>
+
+<p><%= link_to "New Task", new_task_path %></p>

@@ -1,0 +1,44 @@
+<% form_for @task do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label :parent_id %><br />
+    <%= f.collection_select :parent_id, Task.all(:order => 'priority, title'), :id, :title, :include_blank => true %>
+  </p>
+  <p>
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </p>
+  <p>
+    <%= f.label :description %><br />
+    <%= f.text_field :description %>
+  </p>
+  <p>
+    <%= f.label :start_date %><br />
+    <%= f.date_select :start_date %>
+  </p>
+  <p>
+    <%= f.label :due_date %><br />
+    <%= f.date_select :due_date %>
+  </p>
+  <p>
+    <%= f.label :immediate %><br />
+    <%= f.check_box :immediate %>
+  </p>
+  <p>
+    <%= f.label :urgent %><br />
+    <%= f.check_box :urgent %>
+  </p>
+  <p>
+    <%= f.label :priority %><br />
+    <%= f.text_field :priority %>
+  </p>
+  <p>
+    <%= f.label :done %><br />
+    <%= f.check_box :done %>
+  </p>
+  <p>
+    <%= f.label :tag %><br />
+    <%= f.text_field :tag %>
+  </p>
+  <p><%= f.submit "Submit" %></p>
+<% end %>
